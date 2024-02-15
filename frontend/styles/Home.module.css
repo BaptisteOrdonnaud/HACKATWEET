@@ -129,6 +129,40 @@
     margin-left: 3%;
 }
 
+/* CSS DU COMPOSANTS LASTTWEET */
+
+.lastTweets {
+    padding: 3%;
+    border-bottom: 2px solid #50555a;
+
+}
+
+.userAvatarTweet {
+    width: 7%;
+    border-radius: 99999px;
+    margin-right: 2%;
+}
+
+.infoUserTweet {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.userFirstnameTweet {
+    margin-right: 1%;
+}
+
+.userUsernameTweet {
+    margin-right: 1%;
+}
+
+.timeTweet {}
+
+
+
+
+
 
 
 
