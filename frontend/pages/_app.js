@@ -4,7 +4,7 @@ import Head from 'next/head';
 function App({ Component, pageProps }) {
   return (
     <>
-      <Head>
+      <Head >
         <title>Next.js App</title>
       </Head>
       <Component {...pageProps} />

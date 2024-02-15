@@ -1,0 +1,74 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    color: white;
+
+}
+
+.title {
+    line-height: 1.15;
+    font-size: 4rem;
+    font-family: 'Mont-Heavy';
+}
+
+.title a {
+    color: #0070f3;
+    text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+    text-decoration: underline;
+}
+
+.leftContainer {
+    background-image: url('../public/background.png');
+    background-size: cover;
+    width: 40vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightContainer {
+    background-color: black;
+    width: 70vw;
+    height: 100vh;
+    padding: 25px;
+
+}
+
+.logoLeft {
+    height: 200px;
+}
+
+.logoRight {
+    height: 40px;
+}
+
+.btnSignUp {
+    padding: 7px 45px;
+    border-radius: 15px;
+    background-color: #378FEE;
+    color: white;
+    border: none;
+}
+
+.btnSignIn {
+    padding: 7px 48px;
+    border-radius: 15px;
+    background-color: transparent;
+    color: #378FEE;
+    border: 1px solid white;
+}
+
+@font-face {
+    font-family: 'Mont-Heavy';
+    src: url('/HACKATWEET/frontend/font/Mont/Mont-HeavyDEMO.otf');
+    font-weight: 700;
+}
