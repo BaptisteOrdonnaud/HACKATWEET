@@ -134,7 +134,6 @@
 .lastTweets {
     padding: 3%;
     border-bottom: 2px solid #50555a;
-
 }
 
 .userAvatarTweet {
@@ -155,9 +154,19 @@
 
 .userUsernameTweet {
     margin-right: 1%;
+    font-weight: 300;
+    color: #788594;
 }
 
-.timeTweet {}
+
+.timeTweet::before {
+    content: ' · '
+}
+
+
+.timeTweet {
+    color: #788594;
+}
 
 
 
