@@ -67,8 +67,10 @@ function Login() {
     if (isClickSignUp) {
         contentView =
             <div className={styles.sign}>
-                <FontAwesomeIcon onClick={() => closeModal()} icon={faX} style={{ color: "#ffffff", }} />
-                <img className={styles.logoRight} src="Logo_Twitter.png" alt="Logo" />
+                <div className={styles.containerLogoIcon}>
+                    <FontAwesomeIcon onClick={() => closeModal()} icon={faX} style={{ color: "#ffffff", }} />
+                    <img className={styles.logoRightModal} src="Logo_Twitter.png" alt="Logo" />
+                </div>
                 <div>
                     <h2>Create your Hackatweet account</h2>
                 </div>
