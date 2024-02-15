@@ -1,0 +1,144 @@
+.homeContainer {
+    background-color: #151F2B;
+    height: 100vh;
+    display: flex;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+/* PARTIE GAUCHE */
+
+.leftContainer {
+    height: 100vh;
+    width: 25%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-right: 2px solid #3C4650;
+}
+
+.profilContainer {
+    margin-bottom: 8%;
+}
+
+.logoTwitter {
+    height: 40px;
+}
+
+.userInformation {
+    display: flex;
+    align-items: center;
+}
+
+.userFirstname {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    margin-bottom: 5%;
+}
+
+.userUsername {
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+    color: #788594;
+}
+
+.userAvatar {
+    width: 16%;
+    height: 16%;
+    border-radius: 99999px;
+    margin-right: 5%;
+}
+
+.logoutBtn {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    padding: 5px 15px;
+    border-radius: 30px;
+    margin-top: 7%;
+    cursor: pointer;
+}
+
+/* PARTIE MILLIEU */
+
+.middleContainer {
+    height: 100vh;
+    width: 45%;
+    border-right: 2px solid #3C4650;
+}
+
+
+.tweetContainerTitle {
+    margin-left: 5%;
+
+}
+
+/* CSS DU COMPOSANTS TWEET */
+.tweetContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-bottom: 2px solid #3C4650;
+    padding: 2% 0%;
+}
+
+.btnContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 18%;
+    align-items: center;
+}
+
+.tweetInput {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #50555a;
+    width: 80%;
+    height: 50px;
+    margin-bottom: 5%;
+
+    color: white;
+    font-size: 1.2rem;
+    padding: 2%;
+
+    box-sizing: border-box;
+}
+
+.tweetInput::placeholder {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+
+
+.tweetBtn {
+    padding: 7px 20px;
+    border-radius: 15px;
+    background-color: #378FEE;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 3%;
+}
+
+
+
+
+
+
+/* PARTIE DROITE */
+
+.rightContainer {
+    height: 100vh;
+    width: 30%;
+}
