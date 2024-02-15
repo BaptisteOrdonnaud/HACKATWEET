@@ -70,7 +70,7 @@ function Login() {
         contentView =
             <div className={styles.sign}>
                 <div className={styles.containerLogo}>
-                    <FontAwesomeIcon onClick={() => closeModal()} icon={faX} style={{ color: "#ffffff", }} />
+                    <FontAwesomeIcon onClick={() => closeModal()} icon={faX} style={{ color: "#ffffff", cursor: 'pointer' }} />
                 </div>
                 <div className={styles.containerIcon}>
                     <img className={styles.logoRightModal} src="Logo_Twitter.png" alt="Logo" />
@@ -89,15 +89,19 @@ function Login() {
     if (isClickSignIn) {
         contentView =
             <div className={styles.sign}>
-                <FontAwesomeIcon onClick={() => closeModal()} icon={faX} style={{ color: "#ffffff", }} />
-                <img className={styles.logoRight} src="Logo_Twitter.png" alt="Logo" />
+                <div className={styles.containerLogo}>
+                    <FontAwesomeIcon onClick={() => closeModal()} icon={faX} style={{ color: "#ffffff", }} />
+                </div>
+                <div className={styles.containerIcon}>
+                    <img className={styles.logoRightModal} src="Logo_Twitter.png" alt="Logo" />
+                </div>
                 <div>
                     <h2 className={styles.loginTitle}>Create your Hackatweet account</h2>
                 </div>
-                <div>
-                    <input type="text" placeholder="Username" id="signUpUsername" onChange={(e) => setSignInUsername(e.target.value)} value={signInUsername} />
-                    <input type="password" placeholder="Password" id="signUpPassword" onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword} />
-                    <button id="signUp" onClick={() => handleConnection()}>Sign in</button>
+                <div className={styles.containerInput}>
+                    <input className={styles.input} type="text" placeholder="Username" id="signUpUsername" onChange={(e) => setSignInUsername(e.target.value)} value={signInUsername} />
+                    <input className={styles.input} type="password" placeholder="Password" id="signUpPassword" onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword} />
+                    <button className={styles.btnModalSignIn} id="signUp" onClick={() => handleConnection()}>Sign in</button>
                 </div>
             </div>
     }
@@ -109,6 +113,8 @@ function Login() {
 
     const closeModal = () => {
         setIsModalVisible(false)
+        setIsClickSignIn(false)
+        setIsClickSignUp(false)
     }
 
     const handleLoginUp = () => {
