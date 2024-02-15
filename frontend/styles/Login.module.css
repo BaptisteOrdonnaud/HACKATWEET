@@ -43,6 +43,7 @@
 
 .rightContainer {
     background-color: #151F2B;
+    justify-content: center;
     width: 70vw;
     height: 100vh;
     padding: 25px;
@@ -88,4 +89,14 @@
     src: url('../components/asset/font/Mont/Mont-HeavyDEMO.otf');
     font-weight: 400;
     font-style: normal;
+}
+
+.modalSignUp {
+    height: 40vh;
+    width: 45vw;
+    justify-content: center;
+    align-items: center;
+    background-color: #151F2B;
+    margin: 30vh 30vw;
+
 }
