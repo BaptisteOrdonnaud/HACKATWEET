@@ -92,23 +92,63 @@
 }
 
 .modalSignUp {
-    height: 40vh;
+
     width: 45vw;
     justify-content: center;
     align-items: center;
     background-color: #151F2B;
     margin: 30vh 30vw;
+    padding: 2%;
+    color: white;
+    font-family: 'Mont-Heavy';
+    border-radius: 4%;
 
 }
 
-.containerLogoIcon {
+.containerLogo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.logoRightModal {
+    width: 10%;
+
+}
+
+.containerInput {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.logoRightModal {
-    width: 10%;
+.containerIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.btnModalSignIn {
+    padding: 7px 60px;
+    border-radius: 15px;
+    background-color: white;
+    color: #151F2B;
+    border: 1px solid white;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.btnModalSignIn:hover {
+    background-color: hsla(0, 0%, 100%, 0.888);
+}
+
+.input {
+    margin: 5px;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
 }
