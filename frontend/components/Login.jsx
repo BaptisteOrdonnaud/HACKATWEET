@@ -4,6 +4,7 @@ import { login, logout } from '../reducers/user';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX } from '@fortawesome/free-solid-svg-icons';
+import { useRouter } from 'next/router'
 
 import Modal from 'react-modal';
 import React from 'react';
@@ -23,6 +24,8 @@ function Login() {
     const [signInPassword, setSignInPassword] = useState('');
 
     const dispatch = useDispatch();
+    const router = useRouter()
+
 
     const handleRegister = () => {
         fetch('http://localhost:3000/users/signup', {
@@ -38,6 +41,7 @@ function Login() {
                     setSignUpFirstName('');
                     setIsModalVisible(false)
                     setIsClickSignUp(false)
+                    router.push('home')
                 }
             });
     };
@@ -55,6 +59,7 @@ function Login() {
                     setSignInUsername('');
                     setSignInPassword('');
                     setIsModalVisible(false)
+                    router.push('home')
                 }
             });
     };
@@ -62,8 +67,10 @@ function Login() {
     if (isClickSignUp) {
         contentView =
             <div className={styles.sign}>
-                <FontAwesomeIcon onClick={() => closeModal()} icon={faX} style={{ color: "#ffffff", }} />
-                <img className={styles.logoRight} src="Logo_Twitter.png" alt="Logo" />
+                <div className={styles.containerLogoIcon}>
+                    <FontAwesomeIcon onClick={() => closeModal()} icon={faX} style={{ color: "#ffffff", }} />
+                    <img className={styles.logoRightModal} src="Logo_Twitter.png" alt="Logo" />
+                </div>
                 <div>
                     <h2>Create your Hackatweet account</h2>
                 </div>
