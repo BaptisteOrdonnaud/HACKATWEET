@@ -15,6 +15,11 @@
     font-weight: 400;
 }
 
+.join {
+    font-family: 'Mont-Heavy';
+    font-weight: 400;
+}
+
 .title a {
     color: #0070f3;
     text-decoration: none;
@@ -58,6 +63,11 @@
     background-color: #378FEE;
     color: white;
     border: none;
+    cursor: pointer;
+}
+
+.btnSignUp:hover {
+    background-color: #0071f3dd;
 }
 
 .btnSignIn {
@@ -66,6 +76,11 @@
     background-color: transparent;
     color: #378FEE;
     border: 1px solid white;
+    cursor: pointer;
+}
+
+.btnSignIn:hover {
+    background-color: hsl(0, 0%, 15%);
 }
 
 @font-face {
