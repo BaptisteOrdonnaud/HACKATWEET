@@ -76,7 +76,7 @@ function Login() {
                     <img className={styles.logoRightModal} src="Logo_Twitter.png" alt="Logo" />
                 </div>
                 <div>
-                    <h2>Create your Hackatweet account</h2>
+                    <h2 className={styles.loginTitle}>Create your Hackatweet account</h2>
                 </div>
                 <div className={styles.containerInput}>
                     <input className={styles.input} type="text" placeholder="FirstName" id="signUpFirstName" onChange={(e) => setSignUpFirstName(e.target.value)} value={signUpFirstName} />
@@ -92,7 +92,7 @@ function Login() {
                 <FontAwesomeIcon onClick={() => closeModal()} icon={faX} style={{ color: "#ffffff", }} />
                 <img className={styles.logoRight} src="Logo_Twitter.png" alt="Logo" />
                 <div>
-                    <h2>Create your Hackatweet account</h2>
+                    <h2 className={styles.loginTitle}>Create your Hackatweet account</h2>
                 </div>
                 <div>
                     <input type="text" placeholder="Username" id="signUpUsername" onChange={(e) => setSignInUsername(e.target.value)} value={signInUsername} />

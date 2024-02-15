@@ -152,3 +152,7 @@
     border: 1px solid white;
     border-radius: 5px;
 }
+
+.loginTitle {
+    text-align: center;
+}
