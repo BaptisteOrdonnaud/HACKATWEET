@@ -1,13 +1,15 @@
 import styles from '../styles/Home.module.css';
 import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../reducers/user';
 
 function User() {
   const router = useRouter()
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value);
-  console.log(user.firstname)
 
   const handleLoginPage = () => {
+    dispatch(logout())
     router.push('/')
   }
   return (

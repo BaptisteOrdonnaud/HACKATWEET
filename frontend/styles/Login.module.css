@@ -6,6 +6,7 @@
     margin: 0px;
     color: white;
 
+
 }
 
 .title {
@@ -93,9 +94,7 @@
 
 .modalSignUp {
 
-    width: 45vw;
-    justify-content: center;
-    align-items: center;
+    width: 30vw;
     background-color: #151F2B;
     margin: 30vh 30vw;
     padding: 2%;
@@ -151,6 +150,7 @@
     background-color: transparent;
     border: 1px solid white;
     border-radius: 5px;
+    color: white;
 }
 
 .loginTitle {
