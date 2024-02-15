@@ -22,6 +22,8 @@ function Login() {
 
     const [signInUsername, setSignInUsername] = useState('');
     const [signInPassword, setSignInPassword] = useState('');
+    const [signInFirstName, setSignInFirstName] = useState('');
+
 
     const dispatch = useDispatch();
     const router = useRouter()
@@ -35,7 +37,7 @@ function Login() {
         }).then(response => response.json())
             .then(data => {
                 if (data.result) {
-                    dispatch(login({ username: signUpUsername, token: data.token }));
+                    dispatch(login({ firstname: signUpFirstName, username: signUpUsername, token: data.token }));
                     setSignUpUsername('');
                     setSignUpPassword('');
                     setSignUpFirstName('');
@@ -55,7 +57,7 @@ function Login() {
         }).then(response => response.json())
             .then(data => {
                 if (data.result) {
-                    dispatch(login({ username: signInUsername, token: data.token }));
+                    dispatch(login({ firstname: data.user.firstname, username: signInUsername, token: data.token }));
                     setSignInUsername('');
                     setSignInPassword('');
                     setIsModalVisible(false)
@@ -67,18 +69,20 @@ function Login() {
     if (isClickSignUp) {
         contentView =
             <div className={styles.sign}>
-                <div className={styles.containerLogoIcon}>
+                <div className={styles.containerLogo}>
                     <FontAwesomeIcon onClick={() => closeModal()} icon={faX} style={{ color: "#ffffff", }} />
+                </div>
+                <div className={styles.containerIcon}>
                     <img className={styles.logoRightModal} src="Logo_Twitter.png" alt="Logo" />
                 </div>
                 <div>
                     <h2>Create your Hackatweet account</h2>
                 </div>
-                <div>
-                    <input type="text" placeholder="FirstName" id="signUpFirstName" onChange={(e) => setSignUpFirstName(e.target.value)} value={signUpFirstName} />
-                    <input type="text" placeholder="Username" id="signUpUsername" onChange={(e) => setSignUpUsername(e.target.value)} value={signUpUsername} />
-                    <input type="password" placeholder="Password" id="signUpPassword" onChange={(e) => setSignUpPassword(e.target.value)} value={signUpPassword} />
-                    <button id="signUp" onClick={() => handleRegister()}>Sign up</button>
+                <div className={styles.containerInput}>
+                    <input className={styles.input} type="text" placeholder="FirstName" id="signUpFirstName" onChange={(e) => setSignUpFirstName(e.target.value)} value={signUpFirstName} />
+                    <input className={styles.input} type="text" placeholder="Username" id="signUpUsername" onChange={(e) => setSignUpUsername(e.target.value)} value={signUpUsername} />
+                    <input className={styles.input} type="password" placeholder="Password" id="signUpPassword" onChange={(e) => setSignUpPassword(e.target.value)} value={signUpPassword} />
+                    <button className={styles.btnModalSignIn} id="signUp" onClick={() => handleRegister()}>Sign up</button>
                 </div>
             </div>
     }
@@ -110,8 +114,8 @@ function Login() {
     const handleLoginUp = () => {
         setIsClickSignUp(true)
         setIsModalVisible(true)
-
     }
+
     const handleLoginIn = () => {
         setIsClickSignIn(true)
         setIsModalVisible(true)
