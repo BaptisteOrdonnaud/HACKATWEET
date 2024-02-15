@@ -1,16 +1,9 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 * {
   box-sizing: border-box;
-}
-
-@font-face {
-  font-family: 'Mont-Heavy';
-  src: url('/HACKATWEET/frontend/font/Mont/Mont-HeavyDEMO.otf');
-  font-weight: 700;
 }

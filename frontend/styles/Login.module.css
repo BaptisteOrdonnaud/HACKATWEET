@@ -12,6 +12,7 @@
     line-height: 1.15;
     font-size: 4rem;
     font-family: 'Mont-Heavy';
+    font-weight: 400;
 }
 
 .title a {
@@ -69,6 +70,7 @@
 
 @font-face {
     font-family: 'Mont-Heavy';
-    src: url('/HACKATWEET/frontend/font/Mont/Mont-HeavyDEMO.otf');
-    font-weight: 700;
+    src: url('../components/asset/font/Mont/Mont-HeavyDEMO.otf');
+    font-weight: 400;
+    font-style: normal;
 }
