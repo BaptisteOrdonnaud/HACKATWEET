@@ -227,3 +227,9 @@
     font-size: 0.9rem;
     padding-bottom: 6%;
 }
+
+.hashtagColor {
+    font-weight: bold;
+    color: #378FEE;
+    cursor: pointer;
+}

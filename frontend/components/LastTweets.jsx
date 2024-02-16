@@ -14,6 +14,15 @@ function LastTweets(props) {
     };
     const date = moment(props.date).fromNow();
 
+    const hashtagBleu = (content) => {
+        return content.split(' ').map((word, index) => {
+            if (word.startsWith('#')) {
+                return <span key={index} className={styles.hashtagColor}>{word} </span>;
+            } else {
+                return word + ' ';
+            }
+        });
+    };
 
     return (
         <div className={styles.lastTweets}>
@@ -23,7 +32,7 @@ function LastTweets(props) {
                 <h4 className={styles.userUsernameTweet}>{props.username}</h4>
                 <span className={styles.timeTweet}>{date}</span>
             </div>
-            <p className={styles.tweetContent}>{props.message} </p>
+            <p className={styles.tweetContent}>{hashtagBleu(props.message)} </p>
             <div>
                 <FontAwesomeIcon onClick={() => handleClick()} icon={faHeart} className={styles.iconHeart} /> <span>{nbLike}</span>
                 <FontAwesomeIcon icon={faTrashCan} className={styles.iconTrash} />
