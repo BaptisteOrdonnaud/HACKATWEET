@@ -58,7 +58,7 @@ function Login() {
             .then(data => {
                 console.log('token', data)
                 if (data.result) {
-                    dispatch(login({ firstname: data.user.firstname, username: signInUsername, token: data.token }));
+                    dispatch(login({ firstname: data.user.firstname, username: signInUsername, token: data.user.token, idUser: data.user._id }));
                     setSignInUsername('');
                     setSignInPassword('');
                     setIsModalVisible(false)
