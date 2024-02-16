@@ -56,6 +56,7 @@ function Login() {
             body: JSON.stringify({ username: signInUsername, password: signInPassword }),
         }).then(response => response.json())
             .then(data => {
+                console.log('token', data)
                 if (data.result) {
                     dispatch(login({ firstname: data.user.firstname, username: signInUsername, token: data.token }));
                     setSignInUsername('');

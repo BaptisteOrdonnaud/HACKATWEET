@@ -8,7 +8,7 @@ const { checkBody } = require('../modules/checkBody');
 
 router.post('/', async (req, res) => {
 
-    if (!checkBody(req.body, ['message', 'idUser', 'like'])) {
+    if (!checkBody(req.body, ['message', 'idUser'])) {
         res.json({ result: false });
 
         return;
@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
             idUser: req.body.idUser,
             date: new Date,
             message: req.body.message,
-            like: req.body.like
+            like: false
         })
 
         try {
