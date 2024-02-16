@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function Tweet() {
     const [newTweet, setNewTweet] = useState();
     const user = useSelector((state) => state.user.value)
-
+    console.log(user)
     console.log('input', newTweet)
     //NEW TWEET
     const handleTweet = () => {
