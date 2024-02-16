@@ -11,13 +11,14 @@ function Home() {
 
   //ALL TWEETS
 
+
   useEffect(() => {
     fetch('http://localhost:3000/tweets')
       .then(response => response.json())
       .then(tweet => {
         setAllTweets(tweet.tweets);
       });
-  }, []);
+  }, [Tweet]);
 
   const tweets = allTweets.map((data, i) => {
     return <LastTweets key={i} firstname={data.idUser.firstname} username={data.idUser.username} date={data.date} message={data.message} like={data.like} />;
@@ -49,13 +50,13 @@ function Home() {
 
       <div className={styles.rightContainer}>
         <h2 className={styles.tweetContainerTitle}>Trends</h2>
-          <div className={styles.trends}>        
-            <div className={styles.trendsContent}>
-              <Trends />
-              <Trends />
-              <Trends />
-            </div>
+        <div className={styles.trends}>
+          <div className={styles.trendsContent}>
+            <Trends />
+            <Trends />
+            <Trends />
           </div>
+        </div>
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ function Tweet() {
     const [newTweet, setNewTweet] = useState();
     const user = useSelector((state) => state.user.value)
 
+
     //NEW TWEET
     const handleTweet = () => {
         fetch('http://localhost:3000/tweets', {
@@ -20,9 +21,6 @@ function Tweet() {
             });
     }
 
-    useEffect(() => {
-        console.log('hello');
-    }, [newTweet]);
 
 
     return (
