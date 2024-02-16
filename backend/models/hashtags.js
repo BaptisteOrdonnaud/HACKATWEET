@@ -13,6 +13,6 @@ const hashtagSchema = new mongoose.Schema({
     tweets: [{ type: mongoose.Schema.Types.ObjectId, ref: 'tweets' }], // Ajoute un champ pour stocker les références aux tweets
 });
 
-const Hashtag = mongoose.model('Hashtag', hashtagSchema);
+const Hashtag = mongoose.model('hashtags', hashtagSchema);
 
 module.exports = Hashtag;
