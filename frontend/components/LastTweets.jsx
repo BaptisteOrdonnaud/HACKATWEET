@@ -2,6 +2,8 @@ import styles from '../styles/Home.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
+import moment from 'moment';
+
 
 function LastTweets(props) {
 
@@ -10,6 +12,8 @@ function LastTweets(props) {
     const handleClick = () => {
         setNbLike(nbLike + 1);
     };
+    const date = moment(props.date).fromNow();
+
 
     return (
         <div className={styles.lastTweets}>
@@ -17,7 +21,7 @@ function LastTweets(props) {
                 <img className={styles.userAvatarTweet} src="avatar.png" alt="Photo de profil de l'utilisateur" />
                 <h3 className={styles.userFirstnameTweet}>{props.firstname}</h3>
                 <h4 className={styles.userUsernameTweet}>{props.username}</h4>
-                <span className={styles.timeTweet}>{props.date}</span>
+                <span className={styles.timeTweet}>{date}</span>
             </div>
             <p className={styles.tweetContent}>{props.message} </p>
             <div>

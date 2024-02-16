@@ -18,7 +18,7 @@ function Home() {
       .then(tweet => {
         setAllTweets(tweet.tweets);
       });
-  }, [Tweet]);
+  }, []);
 
   const tweets = allTweets.map((data, i) => {
     return <LastTweets key={i} firstname={data.idUser.firstname} username={data.idUser.username} date={data.date} message={data.message} like={data.like} />;
@@ -31,7 +31,7 @@ function Home() {
       .then(dataTrend => {
         setAllTrends(dataTrend.trend);
       });
-  }, [allTrends]);
+  }, []);
 
   const trends = allTrends.map((data, i) => {
     console.log(data)
