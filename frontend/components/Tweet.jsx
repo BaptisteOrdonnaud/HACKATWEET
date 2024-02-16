@@ -7,19 +7,19 @@ function Tweet() {
 
     //NEW TWEET
     const handleTweet = () => {
-        // useEffect(() => {
-        //     fetch('http://localhost:3000/tweets', {
-        //         method: 'POST',
-        //         headers: { 'Content-Type': 'application/json' },
-        //         body: JSON.stringify({ message: newTweet }),
-        //     }).then(response => response.json())
-        //         .then(data => {
-        //             console.log('post nex tweet', data)
-        //             if (data) {
-        //                 setNewTweet('newTweet');
-        //             }
-        //         });
-        // }, []);
+        const newT = {
+            message: newTweet
+        }
+        useEffect(() => {
+            fetch('http://localhost:3000/tweets', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: newTweet }),
+            }).then(response => response.json())
+                .then(data => {
+                    console.log('new tweet', data)
+                });
+        }, []);
     }
 
     return (
