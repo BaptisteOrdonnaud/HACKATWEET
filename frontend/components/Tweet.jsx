@@ -5,8 +5,12 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function Tweet(props) {
     const [newTweet, setNewTweet] = useState('');
-    const user = useSelector((state) => state.user.value)
+    const user = useSelector((state) => state.user.value);
 
+    const addTweet = () => {
+        props.addTweet(newTweet, user.idUser, user.firstname, user.username);
+        setNewTweet("");
+    }
     return (
         <div className={styles.tweetContainer}>
 
@@ -14,7 +18,7 @@ function Tweet(props) {
 
             <div className={styles.btnContainer}>
                 <span>{newTweet.length}/280</span>
-                <button className={styles.tweetBtn} onClick={() => props.addTweet(newTweet, user.idUser)}>Tweet</button>
+                <button className={styles.tweetBtn} onClick={() => addTweet()}>Tweet</button>
             </div>
         </div>
     );
