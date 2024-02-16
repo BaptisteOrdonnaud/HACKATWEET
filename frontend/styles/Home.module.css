@@ -169,12 +169,24 @@
 }
 
 
+.iconTrash {
+    margin-left: 2%;
+    cursor: pointer;
+}
 
+.iconHeart {
+    cursor: pointer;
+}
 
+.iconHeartLiked {
+    color: red;
+}
 
-
-
-
+.hashtag {
+    font-weight: 600;
+    color: #378FEE;
+    cursor: pointer;
+}
 
 
 /* PARTIE DROITE */
@@ -182,4 +194,36 @@
 .rightContainer {
     height: 100vh;
     width: 30%;
+}
+
+/* CSS DU COMPOSANTS TRENDS */
+
+.trends {
+    display: flex;
+    justify-content: center;
+}
+
+.trendsContent {
+    padding: 5%;
+    width: 90%;
+    background-color: #1D2733;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.trendTitle {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    margin-bottom: 2%;
+}
+
+.trendNumber {
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+    color: #788594;
+    font-size: 0.9rem;
+    height: 50px;
 }
