@@ -28,12 +28,16 @@ function Home() {
       .then(response => response.json())
       .then(tweet => {
         setAllTweets(tweet.tweets);
+
       });
   }, []);
 
-  const tweets = allTweets.map((data, i) => {
+  const sortedTweets = allTweets.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  const tweets = sortedTweets.map((data, i) => {
     return <LastTweets key={i} firstname={data.idUser.firstname} username={data.idUser.username} date={data.date} message={data.message} like={data.like} />;
   });
+
 
 
   useEffect(() => {
@@ -41,6 +45,7 @@ function Home() {
       .then(response => response.json())
       .then(dataTrend => {
         setAllTrends(dataTrend.trend);
+
       });
   }, []);
 
