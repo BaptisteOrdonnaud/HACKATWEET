@@ -15,7 +15,6 @@ function Home() {
       .then(response => response.json())
       .then(tweet => {
         setAllTweets(tweet.tweets);
-        console.log(tweet.tweets)
       });
   }, []);
 

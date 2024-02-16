@@ -1,26 +1,26 @@
 import styles from '../styles/Home.module.css';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function Tweet() {
     const [newTweet, setNewTweet] = useState();
+    const user = useSelector((state) => state.user.value)
 
+    console.log('input', newTweet)
     //NEW TWEET
     const handleTweet = () => {
-        const newT = {
-            message: newTweet
-        }
-        useEffect(() => {
-            fetch('http://localhost:3000/tweets', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: newTweet }),
-            }).then(response => response.json())
-                .then(data => {
-                    console.log('new tweet', data)
-                });
-        }, []);
+        fetch('http://localhost:3000/tweets', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: newTweet, idUser: user.idUser }),
+        }).then(response => response.json())
+            .then(data => {
+                console.log('new tweet', data)
+            });
     }
+
+
 
     return (
         <div className={styles.tweetContainer}>

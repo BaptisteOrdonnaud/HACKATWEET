@@ -10,7 +10,6 @@ function LastTweets(props) {
     const handleClick = () => {
         setNbLike(nbLike + 1);
     };
-    console.log('props: ', props)
 
     return (
         <div className={styles.lastTweets}>
