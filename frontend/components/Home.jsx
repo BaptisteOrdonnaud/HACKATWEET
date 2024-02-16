@@ -7,6 +7,7 @@ import Tweet from './Tweet';
 
 function Home() {
   const [allTweets, setAllTweets] = useState([]);
+  const [allTrends, setAllTrends] = useState([]);
 
   //ALL TWEETS
 

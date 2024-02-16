@@ -22,7 +22,6 @@ router.post('/', async (req, res) => {
         like: false
     })
 
-    res.json({ result: true, message: "Yeeeeah" })
     try {
 
         // Mise à jour de la collection "hashtags"
