@@ -24,6 +24,10 @@ function LastTweets(props) {
         });
     };
 
+    const handleDelete = () => {
+
+    }
+
     return (
         <div className={styles.lastTweets}>
             <div className={styles.infoUserTweet}>
@@ -35,7 +39,7 @@ function LastTweets(props) {
             <p className={styles.tweetContent}>{hashtagBleu(props.message)} </p>
             <div>
                 <FontAwesomeIcon onClick={() => handleClick()} icon={faHeart} className={styles.iconHeart} /> <span>{nbLike}</span>
-                <FontAwesomeIcon icon={faTrashCan} className={styles.iconTrash} />
+                <FontAwesomeIcon icon={faTrashCan} className={styles.iconTrash} onClick={() => handleDelete()} />
             </div>
         </div>
     );
