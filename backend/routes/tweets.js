@@ -3,15 +3,20 @@ var router = express.Router();
 
 require('../models/connection');
 const Tweet = require('../models/tweets');
+const Hashtag = require('../models/hashtags');
 const { checkBody } = require('../modules/checkBody');
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
+
     if (!checkBody(req.body, ['message', 'idUser', 'like'])) {
         res.json({ result: false });
 
         return;
-    } else {
+    }
+    else {
         console.log(req.body.idUser)
+        const hashtags = req.body.message.match(/#(\w+)/g) || [];
+
         const newTweet = new Tweet({
             idUser: req.body.idUser,
             date: new Date,
@@ -19,9 +24,31 @@ router.post('/', (req, res) => {
             like: req.body.like
         })
 
-        newTweet.save().then(newDoc => {
-            res.json({ result: true, tweet: newDoc });
-        });
+        try {
+            const savedTweet = await newTweet.save();
+
+            // Mise à jour de la collection "hashtags"
+            for (const tag of hashtags) {
+                const existingHashtag = await Hashtag.findOne({ name: tag });
+                if (existingHashtag) {
+                    existingHashtag.count += 1;
+                    existingHashtag.tweets.push(savedTweet._id);
+                    await existingHashtag.save();
+                } else {
+                    await Hashtag.create({
+                        name: tag,
+                        count: 1,
+                        tweets: [savedTweet._id],
+                    });
+                }
+            }
+
+            res.json({ result: true, tweet: savedTweet });
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ result: false, message: 'Une erreur est survenue lors de la création du tweet.' });
+        }
+
     }
 });
 
