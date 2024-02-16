@@ -45,11 +45,17 @@ function Home() {
       </div>
 
 
-
       {/* PARTIE DROITE */}
 
       <div className={styles.rightContainer}>
-        <Trends />
+        <h2 className={styles.tweetContainerTitle}>Trends</h2>
+          <div className={styles.trends}>        
+            <div className={styles.trendsContent}>
+              <Trends />
+              <Trends />
+              <Trends />
+            </div>
+          </div>
       </div>
     </div>
   );
