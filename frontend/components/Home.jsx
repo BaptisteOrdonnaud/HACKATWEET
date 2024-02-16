@@ -6,11 +6,9 @@ import { useEffect, useState } from 'react';
 import Tweet from './Tweet';
 
 function Home() {
-
-  //NEW TWEET
+  const [allTweets, setAllTweets] = useState([]);
 
   //ALL TWEETS
-  const [allTweets, setAllTweets] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:3000/tweets')
