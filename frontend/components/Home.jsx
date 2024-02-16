@@ -25,6 +25,20 @@ function Home() {
   });
 
 
+  useEffect(() => {
+    fetch('http://localhost:3000/trends')
+      .then(response => response.json())
+      .then(dataTrend => {
+        setAllTrends(dataTrend.trend);
+      });
+  }, [allTrends]);
+
+  const trends = allTrends.map((data, i) => {
+    console.log(data)
+    return <Trends key={i} name={data.name} count={data.count} />;
+  });
+
+
   return (
     <div className={styles.homeContainer}>
 
@@ -52,9 +66,9 @@ function Home() {
         <h2 className={styles.tweetContainerTitle}>Trends</h2>
         <div className={styles.trends}>
           <div className={styles.trendsContent}>
-            <Trends />
-            <Trends />
-            <Trends />
+
+            {trends}
+
           </div>
         </div>
       </div>
