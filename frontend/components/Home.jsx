@@ -39,7 +39,6 @@ function Home() {
   });
 
 
-
   useEffect(() => {
     fetch('http://localhost:3000/trends')
       .then(response => response.json())
@@ -82,7 +81,7 @@ function Home() {
         <h2 className={styles.tweetContainerTitle}>Trends</h2>
         <div className={styles.trends}>
           <div className={styles.trendsContent}>
-
+    
             {trends}
 
           </div>
