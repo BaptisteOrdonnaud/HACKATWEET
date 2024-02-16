@@ -25,6 +25,22 @@ router.post('/', (req, res) => {
     }
 });
 
+router.get('/', (req, res) => {
+    Tweet.find().populate('idUser')
+        .then(tweet => {
+            res.json({ tweets: tweet });
+            console.log(tweet)
+        });
+});
+
+router.delete("/:idUser", (req, res) => {
+    Tweet.deleteOne({
+        idUser: req.body.idUser,
+    }).then(deletedTweet => {
+        res.json({ result: true });
+    });
+});
+
 
 
 
