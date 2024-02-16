@@ -9,6 +9,17 @@ function Home() {
   const [allTweets, setAllTweets] = useState([]);
   const [allTrends, setAllTrends] = useState([]);
 
+  const handleTweet = (newTweet, userId) => {
+    fetch('http://localhost:3000/tweets', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: newTweet, idUser: userId }),
+    }).then(response => response.json())
+      .then(data => {
+        console.log("Le nouveau Tweet :", data.tweet)
+        setAllTweets([...allTweets, data.tweet])
+      });
+  }
   //ALL TWEETS
 
 
@@ -52,7 +63,7 @@ function Home() {
       <div className={styles.middleContainer}>
         <div className={styles.tweetCompoContainer}>
           <h2 className={styles.tweetContainerTitle}>Home</h2>
-          <Tweet />
+          <Tweet addTweet={handleTweet} />
 
           {tweets}
 

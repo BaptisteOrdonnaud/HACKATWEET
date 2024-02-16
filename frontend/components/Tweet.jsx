@@ -3,23 +3,13 @@ import styles from '../styles/Home.module.css';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-
-function Tweet() {
+function Tweet(props) {
     const [newTweet, setNewTweet] = useState();
     const user = useSelector((state) => state.user.value)
 
 
     //NEW TWEET
-    const handleTweet = () => {
-        fetch('http://localhost:3000/tweets', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: newTweet, idUser: user.idUser }),
-        }).then(response => response.json())
-            .then(data => {
-                setNewTweet('')
-            });
-    }
+
 
 
 
@@ -30,7 +20,7 @@ function Tweet() {
 
             <div className={styles.btnContainer}>
                 <span>0/280</span>
-                <button className={styles.tweetBtn} onClick={() => handleTweet()}>Tweet</button>
+                <button className={styles.tweetBtn} onClick={() => props.addTweet(newTweet, user.idUser)}>Tweet</button>
             </div>
         </div>
     );

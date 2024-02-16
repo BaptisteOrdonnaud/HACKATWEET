@@ -15,12 +15,14 @@ router.post('/', async (req, res) => {
 
     const hashtags = req.body.message.match(/#(\w+)/g) || [];
 
-    const newTweet = Tweet.create({
+    const newTweet = new Tweet({
         idUser: req.body.idUser,
         date: new Date,
         message: req.body.message,
         like: false
     })
+
+
 
     try {
 
@@ -39,8 +41,10 @@ router.post('/', async (req, res) => {
                 });
             }
         }
+        newTweet.save().then((result) => {
+            res.json({ result: true, tweet: newTweet });
+        })
 
-        res.json({ result: true, tweet: newTweet });
     } catch (error) {
         console.error(error);
         res.status(500).json({ result: false, message: 'Une erreur est survenue lors de la création du tweet.' });
