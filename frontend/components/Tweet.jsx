@@ -1,3 +1,4 @@
+// import { set } from 'mongoose';
 import styles from '../styles/Home.module.css';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,8 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function Tweet() {
     const [newTweet, setNewTweet] = useState();
     const user = useSelector((state) => state.user.value)
-    console.log(user)
-    console.log('input', newTweet)
+
     //NEW TWEET
     const handleTweet = () => {
         fetch('http://localhost:3000/tweets', {
@@ -16,10 +16,13 @@ function Tweet() {
             body: JSON.stringify({ message: newTweet, idUser: user.idUser }),
         }).then(response => response.json())
             .then(data => {
-                console.log('new tweet', data)
+                setNewTweet('')
             });
     }
 
+    useEffect(() => {
+        console.log('hello');
+    }, [newTweet]);
 
 
     return (
